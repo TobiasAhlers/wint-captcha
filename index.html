@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="static/fakerecaptcha.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- Fake captcha start -->
+    <div class="fkrc-container fkrc-m-p">
+        <!-- Captcha checkbox widget -->
+        <div id="fkrc-checkbox-window" class="fkrc-checkbox-window fkrc-m-p fkrc-block">
+            <div class="fkrc-checkbox-container fkrc-m-p">
+                <button type="button" id="fkrc-checkbox" class="fkrc-checkbox fkrc-m-p fkrc-line-normal"></button>
+            </div>
+            <p class="fkrc-im-not-a-robot fkrc-m-p fkrc-line-normal">Ich bin kein Roboter.</p>
+            <img src="static/captcha_logo.svg" class="fkrc-captcha-logo fkrc-line-normal" alt="">
+            <p class="fkrc-checkbox-desc fkrc-m-p fkrc-line-normal">CAPTCHA</p>
+            <p class="fkrc-checkbox-desc fkrc-m-p fkrc-line-normal">Privacy - Terms</p>
+            <img src="static/captcha_spinner.gif" class="fkrc-spinner fkrc-m-p fkrc-line-normal" alt="" id="fkrc-spinner">
+        </div>
+        <!-- Captcha checkbox verification window -->
+        <div id="fkrc-verifywin-window" class="fkrc-verifywin-window">
+            <div class="fkrc-verifywin-container">
+                <header class="fkrc-verifywin-header">
+                    <span class="fkrc-verifywin-header-text-medium fkrc-m-p fkrc-block">Finde die</span>
+                    <span class="fkrc-verifywin-header-text-big fkrc-m-p fkrc-block">Thunfischpizza</span>
+                    <span class="fkrc-verifywin-header-text-medium fkrc-m-p fkrc-block">im Kühlschrank</span>
+                </header>
+                <main class="fkrc-verifywin-main">
+                    <img src="static/pizza.jpg" width="290" height="290">
+                    <div class="overlay" onclick="validateCaptcha()"></div>
+                </main>
+            </div>
+            <footer class="fkrc-verifywin-container fkrc-verifywin-footer">
+                <div class="fkrc-verifywin-footer-left">
+                    Wähle die Pizza im Kühlschrank aus.
+                </div>
+                <button type="button" class="fkrc-verifywin-verify-button fkrc-block" id="fkrc-verifywin-verify-button">Aufgeben</button>
+            </footer>
+        </div>
+        <img src="static/captcha_arrow.svg" alt="" class="fkrc-verifywin-window-arrow" id="fkrc-verifywin-window-arrow"/>
+    </div>
+    <!-- Fake captcha end -->
+        <script src="static/fakerecaptcha.js"></script>
+        <script>
+            function validateCaptcha() {
+                alert('Captcha validiert');
+                closeVerifyWindow();
+            }
+            function aufgeben() {
+                alert('Hungrig nach Hause gefahren...');
+                closeVerifyWindow();
+            }
+        </script>
+    </body>
+</html>
